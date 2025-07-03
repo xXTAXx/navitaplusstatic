@@ -1,0 +1,40 @@
+.body{
+    margin: none;
+    padding: none;
+}
+#btn-contactos{
+    color: rgb(0, 121, 131);
+}
+#btn-contactos:hover{
+    color: rgb(0, 150, 160);
+
+}
+
+#contenedor-slider{
+    display: flex;
+    background-color: ghostwhite;
+    height: 90vh;
+    max-width: 1500px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+    justify-content: center;
+  align-items: center;
+}
+
+#imagen-cuerpo{
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block; /* Elimina el espacio fantasma que dejan las imágenes inline */
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
