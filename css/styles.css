@@ -1,6 +1,8 @@
-.body{
-    margin: none;
-    padding: none;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 #btn-contactos{
     color: rgb(0, 121, 131);

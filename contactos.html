@@ -12,42 +12,83 @@
 </head>
 
 <!-- barra de navegacion -->
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <div class="container-fluid">
+<style>
+  .navbar {
+    width: 100%;
+    height: 70px;
+    background-color: ghostwhite;
+    padding: 10px;
+  }
 
-    <!-- Logo y toggler en móviles -->
-    <div class="d-flex d-sm-none justify-content-between align-items-center w-100">
-      <a class="navbar-brand mx-1" href="/index.html">
-        <img src="/images/letrero verde.png" alt="Farmacia Navita Plus" width="135">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  .contentnavbar {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 3fr;
+
+  }
+
+  .leftcontentnavbar,
+  .rightcontentnavbar {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .rightcontentnavbar {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav-menu {
+    list-style: none;
+    /* quitar los bullets */
+    display: flex;
+    /* poner los items en fila */
+    gap: 20px;
+    /* espacio entre items */
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .nav-menu li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    color: rgb(32, 32, 32);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+  }
+
+  .nav-menu li a:hover {
+    color: rgb(88, 88, 88);
+    /* o el color del fondo del navbar */
+  }
+
+  .boton-contactos {
+    background-color: #25D366;
+  }
+</style>
+
+<div class="navbar">
+  <div class="contentnavbar">
+    <div class="leftcontentnavbar">
+      <img src="assests/images/logo.webp" alt="Navita Plus" width="145">
     </div>
-
-    <!-- Logo centrado en pantallas sm o mayores -->
-    <a class="navbar-brand mx-3 d-none d-sm-block" href="/index.html">
-      <img src="/images/letrero verde.png" alt="Farmacia Navita Plus" width="135">
-    </a>
-
-    <!-- Menú colapsable -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center w-100 justify-content-between">
-        <li class="nav-item">
-          <a href="/index.html" class="nav-link active">Inicio</a>
-        </li>
-        <li class="nav-item">
-			<a href="/contactos.html" class="nav-link">
-          <button class="btn nav-link" id="btn-contactos">Contactos</button>
-		</a>
+    <div class="rightcontentnavbar">
+      <ul class="nav-menu">
+        <li><a href="#">Inicio</a></li>
+        <li>
+          <a href="https://wa.me/18298027966" class="boton-contactos" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Escríbenos
+          </a>
         </li>
       </ul>
     </div>
-
   </div>
-</nav>
-
+</div>
 <!-- fin barra navegacion -->
 
 
