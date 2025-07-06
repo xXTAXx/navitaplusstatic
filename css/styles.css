@@ -4,6 +4,8 @@
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
 }
+
+
 #btn-contactos{
     color: rgb(0, 121, 131);
 }
@@ -13,27 +15,38 @@
 }
 
 #contenedor-slider{
-    display: flex;
-    background-color: ghostwhite;
-    height: 90vh;
-    max-width: 1500px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    overflow: hidden;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  background-color: rgb(210, 255, 251);
+  height: 90vh; /* o usa height: 100svh si quieres cubrir todo en móviles */
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  justify-content: center;
   align-items: center;
 }
 
 #imagen-cuerpo{
-    width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block; /* Elimina el espacio fantasma que dejan las imágenes inline */
-  border: none;
+  width: 100%;
+  min-width: 870px;
+
+}
+
+.conocer-mas {
+  position: absolute;
+  bottom: 30px; /* o usa top si quieres que esté arriba */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 2; /* asegúrate de que esté por encima de la imagen */
+}
+.conocer-mas i {
+  display: block;
+  margin-top: 5px;
+  font-size: 1.5rem;
 }
 
 a {
