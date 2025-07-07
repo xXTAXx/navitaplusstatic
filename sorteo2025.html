@@ -50,113 +50,211 @@
     }
   </style>
 
-  <style>
-    .navbar {
-      width: 100%;
-      height: 70px;
-      background-color: ghostwhite;
-      padding: 10px;
-    }
+<style>
+  .navbar {
+    width: 100%;
+    height: 70px;
+    background-color: ghostwhite;
+    padding: 10px;
 
+  }
+
+  .contentnavbar {
+    padding: 0px 20px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 3fr;
+
+  }
+
+  .leftcontentnavbar,
+  .rightcontentnavbar {
+    width: 100%;
+    height: 100%;
+  }
+
+  .leftcontentnavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contenedor-in-left{
+    display: none; 
+    gap: .5rem;    }
+
+  .rightcontentnavbar {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav-menu {
+    list-style: none;
+    /* quitar los bullets */
+    display: flex;
+    /* poner los items en fila */
+    gap: 20px;
+    /* espacio entre items */
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .nav-menu li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    color: rgb(0, 121, 131);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+    display: inline-block;
+  }
+  
+  .boton-contactos {
+    background-color: #25d365;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+.nav-menu li a:hover {
+  transform: scale(1.1);
+  color: rgb(3, 150, 163);
+}
+}
+
+  
+
+  .boton-contactos-sm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25d365;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color: rgb(0, 121, 131);
+
+  }
+
+  .logo-link {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .logo-link img {
+    height: auto;
+    width: 145px;
+  }
+
+  .logo-link:hover {
+    transform: scale(1.1);
+    /* o el color del fondo del navbar */
+  }
+
+
+  .boton-expandir {
+    width: 70px;
+    color: rgb(0, 121, 131);
+    height: 50px;
+    font-size: large;
+    background-color: transparent;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .boton-expandir:hover {
+    background-color: rgb(0, 121, 131, 0.2);
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 600px) {
+    .navbar{
+      height: auto;
+      z-index: 2;
+    }
     .contentnavbar {
-      padding: 0px 20px;
-      width: 100%;
-      height: 100%;
-      display: grid;
       gap: 1rem;
-      grid-template-columns: 1fr 3fr;
-
+      grid-template-columns: 1fr;
     }
 
-    .leftcontentnavbar,
-    .rightcontentnavbar {
-      width: 100%;
-      height: 100%;
-    }
+  .contenedor-in-left {
+    display: flex;
+  }
 
+  
 
     .rightcontentnavbar {
-      display: flex;
-      justify-content: flex-end;
+      display: none;
+    justify-content: center;
+    align-content:center;
+      background-color: aliceblue;
+      z-index: 2;
     }
 
     .nav-menu {
-      list-style: none;
-      /* quitar los bullets */
-      display: flex;
-      /* poner los items en fila */
-      gap: 20px;
-      /* espacio entre items */
-      margin: 0;
-      padding: 0;
-      align-items: center;
-    }
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav-menu li{
+    flex-grow: 1;
+    width: 100%;
+  }
+  .nav-menu li *{
+    width: 100%;
+    
+  }
+  
+  .boton-contactos {
+    display: none !important;
+  }
+  
+  }
+</style>
 
-    .nav-menu li a {
-      text-decoration: none;
-      padding: 10px 15px;
-      color: rgb(32, 32, 32);
-      border-radius: 5px;
-      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-      font-weight: 500;
-      display: inline-block;
-    }
-
-    .nav-menu li a:hover {
-      color: rgb(0, 0, 0);
-      transform: scale(1.1);
-      /* o el color del fondo del navbar */
-    }
-
-    .boton-contactos {
-      background-color: #25D366;
-    }
-
-
-    .logo-link {
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-    .logo-link img {
-      height: auto;
-      width: 145px;
-    }
-
-    .logo-link:hover {
-      transform: scale(1.1);
-      /* o el color del fondo del navbar */
-    }
-  </style>
 </head>
 
-<body>
+<!-- barra de navegacion  -->
 
 
-  <!-- barra de navegacion -->
+<div class="navbar">
+<div class="contentnavbar">
+  <div class="leftcontentnavbar">
+    <a href="/index.html" class="logo-link">
+      <img src="assets/images/logo.webp" alt="Logo de la farmacia Navita Plus">
+    </a>
 
-
-
-
-
-  <div class="navbar">
-    <div class="contentnavbar">
-      <div class="leftcontentnavbar">
-        <a href="/index.html" class="logo-link">
-          <img src="assets/images/logo.webp" alt="Logo de la farmacia Navita Plus">
+    <div class="contenedor-in-left">
+      <a href="https://wa.me/18298027966" class="boton-contactos-sm" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
         </a>
-      </div>
-      <div class="rightcontentnavbar">
-        <ul class="nav-menu">
-          <li><a href="#">Inicio</a></li>
-          <li>
-            <a href="https://wa.me/18298027966" class="boton-contactos" target="_blank">
-              <i class="fa-brands fa-whatsapp"></i> Escríbenos
-            </a>
-          </li>
-        </ul>
-      </div>
+    <button type="button" class="boton-expandir">
+      <i class="fa-solid fa-caret-down"></i>
+    </button>
     </div>
+
+    
   </div>
+
+  <div class="rightcontentnavbar">
+    <ul class="nav-menu">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Sobre Nosotros</a></li>
+
+      <li>
+        <a href="https://wa.me/18298027966" class="boton-contactos" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          <label>Escríbenos</label>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+</div>
+</div>
 
   <!-- fin barra navegacion -->
 
@@ -180,5 +278,12 @@
 
 
 </body>
+<script>
+  const botonExpandir = document.querySelector('.boton-expandir');
+ const menuDerecho = document.querySelector('.rightcontentnavbar');
 
+ botonExpandir.addEventListener('click', () => {
+   menuDerecho.style.display = (menuDerecho.style.display === 'flex') ? 'none' : 'flex';
+ });
+</script>
 </html>

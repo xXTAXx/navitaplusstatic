@@ -24,6 +24,7 @@
       height: 70px;
       background-color: ghostwhite;
       padding: 10px;
+
     }
 
     .contentnavbar {
@@ -42,6 +43,15 @@
       height: 100%;
     }
 
+    .leftcontentnavbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .contenedor-in-left{
+      display: none; 
+      gap: .5rem;    }
 
     .rightcontentnavbar {
       display: flex;
@@ -63,28 +73,43 @@
     .nav-menu li a {
       text-decoration: none;
       padding: 10px 15px;
-      color: rgb(32, 32, 32);
+      color: rgb(0, 121, 131);
       border-radius: 5px;
       transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
       font-weight: 500;
       display: inline-block;
     }
-
-    .nav-menu li a:hover {
-      color: rgb(0, 0, 0);
-      transform: scale(1.1);
-      /* o el color del fondo del navbar */
+    
+    .boton-contactos {
+      background-color: #25d365;
     }
 
-    .boton-contactos {
-      background-color: #25D366;
+    @media (hover: hover) and (pointer: fine) {
+  .nav-menu li a:hover {
+    transform: scale(1.1);
+    color: rgb(3, 150, 163);
+  }
+}
+
+    
+
+    .boton-contactos-sm{
       display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #25d365;
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+      color: rgb(0, 121, 131);
+
     }
 
     .logo-link {
       display: inline-block;
       transition: transform 0.2s ease;
     }
+
     .logo-link img {
       height: auto;
       width: 145px;
@@ -96,55 +121,70 @@
     }
 
 
-
-    @media (max-width: 768px) {
-      .boton-contactos label{
-      display: none;
+    .boton-expandir {
+      width: 70px;
+      color: rgb(0, 121, 131);
+      height: 50px;
+      font-size: large;
+      background-color: transparent;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      border-radius: 5px;
+      border: none;
     }
+
+    .boton-expandir:hover {
+      background-color: rgb(0, 121, 131, 0.2);
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 600px) {
+      .navbar{
+        height: auto;
+        z-index: 2;
+      }
+      .contentnavbar {
+        gap: 1rem;
+        grid-template-columns: 1fr;
+      }
+
+    .contenedor-in-left {
+      display: flex;
+    }
+
+    
+
+      .rightcontentnavbar {
+        display: none;
+      justify-content: center;
+      align-content:center;
+        background-color: aliceblue;
+        z-index: 2;
+      }
+
+      .nav-menu {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .nav-menu li{
+      flex-grow: 1;
+      width: 100%;
+    }
+    .nav-menu li *{
+      width: 100%;
+      
+    }
+    
+    .boton-contactos {
+      display: none !important;
+    }
+    
     }
   </style>
 
 </head>
 
-<!-- barra de navegacion 
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <div class="container-fluid">
-
-    <div class="d-flex d-sm-none justify-content-between align-items-center w-100">
-      <a class="navbar-brand mx-1" href="#">
-        <img src="/images/letrero verde.png" alt="Farmacia Navita Plus" width="135">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="fa-solid fa-caret-down"></span>
-      </button>
-    </div>
-
-    <a class="navbar-brand mx-3 d-none d-sm-block" href="#">
-      <img src="/images/letrero verde.png" alt="Farmacia Navita Plus" width="135">
-    </a>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center w-100 justify-content-end">
-        <li class="nav-item">
-          <a href="/index.html" class="nav-link active">Inicio</a>
-        </li>
-        <li class="nav-item">
-			<a href="/contactos.html" class="nav-link">
-          <button class="btn nav-link" id="btn-contactos">Contactos</button>
-		</a>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-</nav>
-
- fin barra navegacion -->
-
-
-
-
+<!-- barra de navegacion  -->
 
 
 <div class="navbar">
@@ -153,14 +193,27 @@
       <a href="/index.html" class="logo-link">
         <img src="assets/images/logo.webp" alt="Logo de la farmacia Navita Plus">
       </a>
+
+      <div class="contenedor-in-left">
+        <a href="https://wa.me/18298027966" class="boton-contactos-sm" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+      <button type="button" class="boton-expandir">
+        <i class="fa-solid fa-caret-down"></i>
+      </button>
+      </div>
+
+      
     </div>
-    
+
     <div class="rightcontentnavbar">
       <ul class="nav-menu">
         <li><a href="#">Inicio</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+
         <li>
           <a href="https://wa.me/18298027966" class="boton-contactos" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> 
+            <i class="fa-brands fa-whatsapp"></i>
             <label>Escríbenos</label>
           </a>
         </li>
@@ -180,16 +233,23 @@
     <img src="/assets/images/fondo.webp" alt="Navita" id="imagen-cuerpo">
   </div>
 
-  
+
 </div>
 <div class="conocer-mas">
-    <p class="conoce-mas-texto">Conoce mas</p>
-    <i class="fa-solid fa-arrow-down"></i>
+  <p class="conoce-mas-texto">Conoce mas</p>
+  <i class="fa-solid fa-arrow-down"></i>
 </div>
- 
+
 
 </body>
+<script>
+   const botonExpandir = document.querySelector('.boton-expandir');
+  const menuDerecho = document.querySelector('.rightcontentnavbar');
 
+  botonExpandir.addEventListener('click', () => {
+    menuDerecho.style.display = (menuDerecho.style.display === 'flex') ? 'none' : 'flex';
+  });
+</script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
 	crossorigin="anonymous"></script> -->
