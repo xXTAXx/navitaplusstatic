@@ -7,6 +7,7 @@
   <title>Navita Plus</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- fuente latos -->
@@ -17,170 +18,6 @@
     rel="stylesheet">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
-
-  <style>
-    .navbar {
-      width: 100%;
-      height: 70px;
-      background-color: ghostwhite;
-      padding: 10px;
-
-    }
-
-    .contentnavbar {
-      padding: 0px 20px;
-      width: 100%;
-      height: 100%;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr 3fr;
-
-    }
-
-    .leftcontentnavbar,
-    .rightcontentnavbar {
-      width: 100%;
-      height: 100%;
-    }
-
-    .leftcontentnavbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .contenedor-in-left{
-      display: none; 
-      gap: .5rem;    }
-
-    .rightcontentnavbar {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .nav-menu {
-      list-style: none;
-      /* quitar los bullets */
-      display: flex;
-      /* poner los items en fila */
-      gap: 20px;
-      /* espacio entre items */
-      margin: 0;
-      padding: 0;
-      align-items: center;
-    }
-
-    .nav-menu li a {
-      text-decoration: none;
-      padding: 10px 15px;
-      color: rgb(0, 121, 131);
-      border-radius: 5px;
-      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-      font-weight: 500;
-      display: inline-block;
-    }
-    
-    .boton-contactos {
-      background-color: #25d365;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-  .nav-menu li a:hover {
-    transform: scale(1.1);
-    color: rgb(3, 150, 163);
-  }
-}
-
-    
-
-    .boton-contactos-sm{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #25d365;
-      width: 50px;
-      height: 50px;
-      border-radius: 5px;
-      color: rgb(0, 121, 131);
-
-    }
-
-    .logo-link {
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-
-    .logo-link img {
-      height: auto;
-      width: 145px;
-    }
-
-    .logo-link:hover {
-      transform: scale(1.1);
-      /* o el color del fondo del navbar */
-    }
-
-
-    .boton-expandir {
-      width: 70px;
-      color: rgb(0, 121, 131);
-      height: 50px;
-      font-size: large;
-      background-color: transparent;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      border-radius: 5px;
-      border: none;
-    }
-
-    .boton-expandir:hover {
-      background-color: rgb(0, 121, 131, 0.2);
-      transform: scale(1.1);
-    }
-
-    @media (max-width: 600px) {
-      .navbar{
-        height: auto;
-        z-index: 2;
-      }
-      .contentnavbar {
-        gap: 1rem;
-        grid-template-columns: 1fr;
-      }
-
-    .contenedor-in-left {
-      display: flex;
-    }
-
-    
-
-      .rightcontentnavbar {
-        display: none;
-      justify-content: center;
-      align-content:center;
-        background-color: aliceblue;
-        z-index: 2;
-      }
-
-      .nav-menu {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-    .nav-menu li{
-      flex-grow: 1;
-      width: 100%;
-    }
-    .nav-menu li *{
-      width: 100%;
-      
-    }
-    
-    .boton-contactos {
-      display: none !important;
-    }
-    
-    }
-  </style>
 
 </head>
 
@@ -240,18 +77,9 @@
   <i class="fa-solid fa-arrow-down"></i>
 </div>
 
+<script src="scripts/navbar.js"></script>
 
 </body>
-<script>
-   const botonExpandir = document.querySelector('.boton-expandir');
-  const menuDerecho = document.querySelector('.rightcontentnavbar');
 
-  botonExpandir.addEventListener('click', () => {
-    menuDerecho.style.display = (menuDerecho.style.display === 'flex') ? 'none' : 'flex';
-  });
-</script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-	crossorigin="anonymous"></script> -->
 
 </html>
