@@ -3,7 +3,7 @@
     height: 70px;
     background-color: ghostwhite;
     padding: 10px;
-
+    z-index: 2;
   }
 
   .contentnavbar {

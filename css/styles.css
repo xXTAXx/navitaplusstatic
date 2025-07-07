@@ -18,7 +18,7 @@
   position: relative;
   display: flex;
   background-color: rgb(210, 255, 251);
-  height: 90vh; /* o usa height: 100svh si quieres cubrir todo en móviles */
+  height: calc(100svh - 70px);/* o usa height: 100svh si quieres cubrir todo en móviles */
   width: 100%;
   border-radius: 0 0 5px 5px;
   overflow: hidden;
