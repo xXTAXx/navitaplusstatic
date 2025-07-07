@@ -78,6 +78,7 @@
 
     .boton-contactos {
       background-color: #25D366;
+      display: flex;
     }
 
     .logo-link {
@@ -92,6 +93,14 @@
     .logo-link:hover {
       transform: scale(1.1);
       /* o el color del fondo del navbar */
+    }
+
+
+
+    @media (max-width: 768px) {
+      .boton-contactos label{
+      display: none;
+    }
     }
   </style>
 
@@ -145,16 +154,20 @@
         <img src="assets/images/logo.webp" alt="Logo de la farmacia Navita Plus">
       </a>
     </div>
+    
     <div class="rightcontentnavbar">
       <ul class="nav-menu">
         <li><a href="#">Inicio</a></li>
         <li>
           <a href="https://wa.me/18298027966" class="boton-contactos" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> Escríbenos
+            <i class="fa-brands fa-whatsapp"></i> 
+            <label>Escríbenos</label>
           </a>
         </li>
       </ul>
     </div>
+
+
   </div>
 </div>
 
