@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+   .hero {
+  min-height: calc(100vh - 70px); /* ajusta al tamaño del navbar */
+  background-color: #f5fbfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1 1 350px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: #007983;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background-color: #25D366;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.hero-btn:hover {
+  background-color: #1da851;
+  transform: scale(1.05);
+}
+
+.hero-image {
+  flex: 1 1 350px;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Bienvenido a Navita Plus</h1>
+            <p>Tu farmacia de confianza, con los mejores productos y atención personalizada.</p>
+            <a href="https://wa.me/18298027966" class="hero-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Escríbenos por WhatsApp
+            </a>
+          </div>
+      
+          <div class="hero-image">
+            <img src="/assets/images/fondo de pantalla@2x.png" alt="Familia feliz y saludable">
+          </div>
+        </div>
+      </section>
+      
+  
+</body>
+</html>

@@ -1,8 +1,107 @@
+/* Thin */
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueThin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueThin-Italic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueLight-Italic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Book (puedes usar weight 350 o 400 si no lo vas a diferenciar mucho) */
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueBook.woff2') format('woff2');
+  font-weight: 350;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueBook-Italic.woff2') format('woff2');
+  font-weight: 350;
+  font-style: italic;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueRegular-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueBold-Italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Heavy */
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueHeavy.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueHeavy-Italic.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Black */
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueBlack.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Uni Neue';
+  src: url('/assets/fonts/uni-neue/UniNeueBlack-Italic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+}
+
+
 *{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Uni Neue', sans-serif;
 }
 
 
