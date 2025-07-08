@@ -104,6 +104,9 @@
   font-family: 'Uni Neue', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
 
 #btn-contactos{
     color: rgb(0, 121, 131);
@@ -113,22 +116,68 @@
 
 }
 
-#contenedor-slider{
+.hero {
   position: relative;
-  display: flex;
-  background-color: rgb(210, 255, 251);
-  height: calc(100svh - 70px);/* o usa height: 100svh si quieres cubrir todo en móviles */
+  height: 100vh;
+  height: 100dvh; /* ajusta si tu navbar mide 70px */
   width: 100%;
-  border-radius: 0 0 5px 5px;
   overflow: hidden;
-  justify-content: center;
-  align-items: center;
 }
 
-#imagen-cuerpo{
+.contenedor-slider{
   width: 100%;
-  min-width: 870px;
+  height: 100%;
+}
 
+.slide{
+  width: 100%;
+  height: 100%;
+  
+}
+.imagen-cuerpo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  object-position: 10%;
+
+}
+
+.text-hero {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  max-width: 500px;
+}
+
+.text-hero-h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.text-hero-h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@keyframes bounceSuave {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  25% {
+    transform: translate(-50%, -10px);
+  }
+  50% {
+    transform: translate(-50%, 0px);
+  }
+  75% {
+    transform: translate(-50%, -5px);
+  }
 }
 
 .conocer-mas {
@@ -139,8 +188,10 @@
   padding: 20px;
   text-align: center;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   z-index: 2; /* asegúrate de que esté por encima de la imagen */
+  animation: bounceSuave 3s ease-in-out infinite;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 .conocer-mas i {
   display: block;
@@ -148,7 +199,33 @@
   font-size: 1.5rem;
 }
 
-a {
-  text-decoration: none;
+
+.about {
+  width: 100%;
+  padding: 50px 20px; /* Espaciado vertical y horizontal */
+  background-color: #f9f9f9; /* opcional, para diferenciar visualmente */
 }
 
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+ 
+}
+
+.about-content-child{
+  flex: 1 1 300px;
+  padding: min(3em,8%);
+  background-color:rgb(233, 250, 248);
+  border-radius: 2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+
+.about-content-child:hover {
+  transform: scale(1.02);
+}
