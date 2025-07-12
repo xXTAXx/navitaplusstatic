@@ -202,7 +202,7 @@ a {
 
 .about {
   width: 100%;
-  padding: 50px 20px; /* Espaciado vertical y horizontal */
+  padding: 50px 10px; /* Espaciado vertical y horizontal */
   background-color: #f9f9f9; /* opcional, para diferenciar visualmente */
 }
 
@@ -228,4 +228,142 @@ a {
 
 .about-content-child:hover {
   transform: scale(1.02);
+}
+
+.labs{
+  width: 100%;
+  padding: 20px 10px;
+  background-color: rgb(73, 144, 149);
+}
+
+.labs-content{
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 3fr;
+
+
+  
+}
+
+.labs-leftside{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+
+}
+
+.labs-leftside img{
+  width: 55%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+.labs-leftside h2{
+  text-align:start;
+  color: #f9f9f9;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.labs-rightside{
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+}
+
+@media (max-width: 710px) {
+  .labs-leftside p{
+    text-align: center;
+  }
+  .labs-content{
+    grid-template-columns: 1fr ;
+  }
+}
+
+
+
+.location-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+
+.footer {
+  background-color: rgb(0, 121, 131);
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-logo {
+  width: 120px;
+  height: auto;
+}
+
+.footer-middle p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-right a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer-right a:hover {
+  color: #cccccc;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
