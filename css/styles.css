@@ -118,8 +118,8 @@ a {
 
 .hero {
   position: relative;
-  height: 100vh;
-  height: 100dvh; /* ajusta si tu navbar mide 70px */
+  height: 60vh;
+  height: 60dvh; /* ajusta si tu navbar mide 70px */
   width: 100%;
   overflow: hidden;
 }
@@ -366,4 +366,58 @@ a {
   margin-top: 2rem;
   font-size: 0.85rem;
   opacity: 0.8;
+}
+
+
+
+
+
+.promo-cardiologica {
+  background-color: #e3f6f9;
+  padding: 2em 1em;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.promo-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 1em;
+  padding: 2em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #093d4c;
+  text-align: center;
+}
+
+.promo-container h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  color: #d0242a;
+}
+
+.promo-container .fecha {
+  font-weight: bold;
+  color: #0a5d78;
+}
+
+.promo-container .descuento {
+  font-size: 1.4em;
+  color: #d0242a;
+  margin: 1em 0;
+}
+
+.muestras {
+  background-color: #f6f6f6;
+  border-left: 4px solid #d0242a;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-top: 1em;
+  font-size: 1em;
+  color: #444;
+}
+
+.firma {
+  margin-top: 2em;
+  font-style: italic;
+  color: #0a5d78;
 }
