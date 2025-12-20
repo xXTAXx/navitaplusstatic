@@ -1,0 +1,50 @@
+.bank-section{ 
+    position: relative;
+    top: 70px;
+    width: min(100%,1500px);
+    background-color: whitesmoke;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.bank-display{
+    width: 700px;
+    background-color: azure;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+}
+.bank-logo img{
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
+}
+
+
+
+.bank-logo,
+.bank-info{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+}
+
+.bank-logo{
+    justify-content: center;
+    align-items: center;
+    font-size: .9rem;
+}
+@media (max-width: 710px) {
+
+  .bank-display{
+    grid-template-columns: 1fr ;
+    justify-content: center;
+  }
+  .bank-logo,
+  .bank-info{
+    align-items: center;
+  }
+}
