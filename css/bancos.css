@@ -29,7 +29,11 @@
 .bank-info{
     display: flex;
     flex-direction: column;
-    font-size: 1.7rem;
+
+}
+
+.bank-info{
+    font-size: 1.4rem;
 }
 
 .bank-logo{
@@ -47,4 +51,7 @@
   .bank-info{
     align-items: center;
   }
+  .bank-info{
+    font-size: 1rem;
+}
 }
