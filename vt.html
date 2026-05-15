@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  * {
+    margin: 0%;
+    padding: 0%;
+  }
+
+
+  .navbar {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background-color: ghostwhite;
+  }
+
+  .contentnavbar {
+    padding: 0px 20px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 3fr;
+
+  }
+
+  .leftcontentnavbar,
+  .rightcontentnavbar {
+    width: 100%;
+    height: 100%;
+  }
+
+  .leftcontentnavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contenedor-in-left {
+    display: none;
+    gap: .5rem;
+  }
+
+  .rightcontentnavbar {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav-menu {
+    list-style: none;
+    /* quitar los bullets */
+    display: flex;
+    /* poner los items en fila */
+    gap: 20px;
+    /* espacio entre items */
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .nav-menu li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    color: rgb(0, 121, 131);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+    display: inline-block;
+  }
+
+  .boton-contactos {
+    background-color: #25d365;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .nav-menu li a:hover {
+      transform: scale(1.1);
+      color: rgb(3, 150, 163);
+    }
+  }
+
+
+
+  .boton-contactos-sm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25d365;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color: rgb(0, 121, 131);
+
+  }
+
+  .logo-link {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .logo-link img {
+    height: auto;
+    width: 145px;
+  }
+
+  .logo-link:hover {
+    transform: scale(1.1);
+    /* o el color del fondo del navbar */
+  }
+
+
+  .boton-expandir {
+    width: 70px;
+    color: rgb(0, 121, 131);
+    height: 50px;
+    font-size: large;
+    background-color: transparent;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .boton-expandir:hover {
+    background-color: rgb(0, 121, 131, 0.2);
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 600px) {
+    .navbar {
+      height: auto;
+      z-index: 2;
+    }
+
+    .contentnavbar {
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .contenedor-in-left {
+      display: flex;
+    }
+
+
+
+    .rightcontentnavbar {
+      display: none;
+      justify-content: center;
+      align-content: center;
+      background-color: aliceblue;
+      z-index: 2;
+    }
+
+    .rightcontentnavbar.show {
+      display: flex;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .nav-menu li {
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .nav-menu li * {
+      width: 100%;
+
+    }
+
+    .boton-contactos {
+      display: none !important;
+    }
+
+  }
+
+  @media (min-width: 601px) {
+    .rightcontentnavbar {
+      display: flex;
+    }
+  }
+
+  /* ----------------------------------------------------- */
+
+  .hero-section {
+    background-color: hsl(0, 0%, 90%);
+    padding-top: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+  .hero-container {
+    width: 100%;
+    max-width: 1500px;
+    height: 50dvh;
+    margin: 10px;
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-image {
+    object-fit: cover;
+    object-position: 50% 90%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .action-hero {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0px;
+    background: rgba(148, 148, 148, 0);
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, .55),
+        rgba(0, 0, 0, 0));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-button {
+    width: 160px;
+    height: 45px;
+
+    border-radius: 10px;
+    border: none;
+
+    font-size: 1rem;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition:
+      transform .2s ease,
+      background-color .2s ease,
+      color .2s ease,
+      border-color .2s ease;
+  }
+
+  /* SOLID */
+  .hero-button-solid {
+    background-color: white;
+    color: rgb(0, 121, 131);
+  }
+
+  .hero-button-solid:hover {
+    transform: scale(1.05);
+    background-color: rgb(240, 240, 240);
+  }
+
+  /* GHOST */
+  .hero-button-ghost {
+    background-color: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, .4);
+
+    color: white;
+  }
+
+  .hero-button-ghost:hover {
+    transform: scale(1.05);
+
+    background-color: rgba(255, 255, 255, .18);
+    border-color: rgba(255, 255, 255, .7);
+  }
+
+  .contact-section {
+    background-color: hsl(173, 81%, 21%);
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 20px;
+  }
+
+  .contact-container {
+    width: 100%;
+    max-width: 1500px;
+
+    display: grid;
+    grid-template-columns: 1fr fr;
+    gap: 20px;
+
+
+  }
+
+  /* CAJAS */
+  .l-contact-container,
+  .r-contact-container {
+    border-radius: 32px;
+    overflow: hidden;
+  }
+
+  /* IZQUIERDA */
+  .l-contact-container {
+    background-color: #00000035;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    min-height: 100px;
+  }
+
+  /* DERECHA */
+  .r-contact-container {
+    background-color: #e9ecef;
+
+    min-height: 400px;
+  }
+
+  /* TEXO */
+  .l-contact-container h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    color: #e9ecef;
+    line-height: .9;
+    text-align: right;
+  }
+
+  .r-contact-container {
+    background-color: #e9ecef;
+
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .social-links {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .social-card {
+    background-color: white;
+
+    border-radius: 20px;
+
+    padding: 18px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    text-decoration: none;
+
+    color: rgb(0, 121, 131);
+
+    transition:
+      transform .2s ease,
+      background-color .2s ease;
+  }
+
+  .social-card:hover {
+    transform: translateY(-3px);
+    background-color: rgb(245, 245, 245);
+  }
+
+  .social-card i {
+    font-size: 1.8rem;
+  }
+
+  .social-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social-title {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .social-user {
+    opacity: .7;
+    font-size: .95rem;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 600px) {
+
+    .hero-container {
+      height: 80dvh;
+    }
+
+    .contact-container {
+      grid-template-columns: 1fr 1.2fr;
+      align-items: stretch;
+    }
+
+  }
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navita Plus</title>
+
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="contentnavbar">
+      <div class="leftcontentnavbar">
+        <a href="https://www.navitaplus.com/" class="logo-link">
+          <img src="assets/images/logo.webp" alt="Logo de la farmacia Navita Plus">
+        </a>
+
+        <div class="contenedor-in-left">
+          <a href="https://wa.me/18298027966" class="boton-contactos-sm" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <button type="button" class="boton-expandir">
+            <i class="fa-solid fa-caret-down"></i>
+          </button>
+        </div>
+
+
+      </div>
+
+      <div class="rightcontentnavbar">
+        <ul class="nav-menu">
+          <li><a href="https://www.navitaplus.com/">Inicio</a></li>
+          <!-- <li><a href="#">Sobre Nosotros</a></li> -->
+
+          <li>
+            <a href="https://wa.me/18298027966" class="boton-contactos" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i>
+              <label>Escríbenos</label>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <section class="hero-section">
+    <div class="hero-container">
+      <img class="hero-image" src="IMG_2785.png" alt="Villa Trina" srcset="">
+      <div class="action-hero">
+
+        <!-- <button class="hero-button hero-button-ghost">Locación</button> -->
+
+        <a href="http://wa.me/+18097201528">
+          <button class="hero-button hero-button-solid">WhatsApp
+            <i class="fa-brands fa-whatsapp fa-bounce"></i>
+          </button></a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="l-contact-container">
+        <h1>Redes y Contactos</h1>
+      </div>
+      <div class="r-contact-container">
+        <div class="social-links">
+
+          <a href="https://www.facebook.com/profile.php?id=61579046278187" class="social-card">
+            <i class="fa-brands fa-facebook-f"></i>
+
+            <div class="social-info">
+              <span class="social-title">Facebook</span>
+              <span class="social-user">@navitaplus</span>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/navitaplus/" class="social-card">
+            <i class="fa-brands fa-instagram"></i>
+
+            <div class="social-info">
+              <span class="social-title">Instagram</span>
+              <span class="social-user">@navitaplus</span>
+            </div>
+          </a>
+
+          <a href="http://wa.me/+18097201528" class="social-card">
+            <i class="fa-brands fa-whatsapp"></i>
+
+            <div class="social-info">
+              <span class="social-title">WhatsApp</span>
+              <span class="social-user">809-720-1528</span>
+            </div>
+          </a>
+
+          <a href="tel:+18298027966" class="social-card">
+            <i class="fa fa-phone"></i>
+
+            <div class="social-info">
+              <span class="social-title">Telefono</span>
+              <span class="social-user">829-825-1528</span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <img src="/assets/images/logo-navitaplus-blanco.webp" alt="Farmacia Navita Plus" class="footer-logo" />
+    </div>
+    <div class="footer-middle">
+      <p>
+        <strong>Dirección:</strong>
+        <a href="https://maps.app.goo.gl/zWpUj97d9DKgFdvP6" target="_blank" rel="noopener noreferrer">
+          Carr. Moca-Salcedo, Las Lagunas Abajo, Moca 56000, RD
+        </a>
+      </p>
+      <p>
+        <strong>Tel:</strong>
+        <a href="tel:+18298251528">(829) 825-1528</a>
+      </p>
+      <p>
+        <strong>WhatsApp:</strong>
+        <a href="https://wa.me/18298027966" target="_blank" rel="noopener noreferrer">(829) 802-7966</a>
+      </p>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:navitapluss@gmail.com">navitapluss@gmail.com</a>
+      </p>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.instagram.com/navitaplus/" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/FarmaciaNavitaPlus" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="mailto:navitapluss@gmail.com" aria-label="Correo">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <p>Creado por <strong>XTAX</strong> · <a href="mailto:xtaxlol05@gmail.com">xtaxlol05@gmail.com</a></p>
+  </div>
+</footer>
+<script src="https://kit.fontawesome.com/b4979c323b.js" crossorigin="anonymous"></script>
+
+</html>
